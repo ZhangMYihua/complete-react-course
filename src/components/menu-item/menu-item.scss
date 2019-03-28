@@ -1,26 +1,20 @@
-.homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 80px;
-}
-
-.directory-menu {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .menu-item {
   min-width: 30%;
-  height: 240px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
   margin: 0 7.5px 15px;
+  background-size: cover;
+  background-position: center;
+
+  &.small {
+    height: 240px;
+  }
+
+  &.big {
+    height: 380px;
+  }
 
   &:first-child {
     margin-right: 7.5px;
@@ -37,7 +31,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    background-color: white;
+    opacity: 0.8;
 
     .title {
       font-weight: bold;
