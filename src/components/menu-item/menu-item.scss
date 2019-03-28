@@ -8,6 +8,10 @@
   background-size: cover;
   background-position: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &.small {
     height: 240px;
   }
