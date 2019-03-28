@@ -27,12 +27,12 @@ class Directory extends Component {
         },
         {
           title: 'womens',
-          imageUrl: 'https://i.ibb.co/pWf0vvk/women.png',
+          imageUrl: 'https://i.ibb.co/qFbNWNV/women.png',
           size: 'big'
         },
         {
           title: 'mens',
-          imageUrl: 'https://i.ibb.co/LxRcptm/men.png',
+          imageUrl: 'https://i.ibb.co/6rLfSr3/men.png',
           size: 'big'
         }
       ]
