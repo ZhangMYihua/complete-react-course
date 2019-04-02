@@ -79,7 +79,7 @@ class ShopPage extends React.Component {
 
     return (
       <div className='shop'>
-        <h1>Shop</h1>
+        <h1>Collections</h1>
         {collections.map((collection, idx) => (
           <CollectionPreview {...collection} key={idx} />
         ))}
