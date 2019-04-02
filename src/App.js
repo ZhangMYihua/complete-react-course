@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop';
+import ContactPage from './pages/contact/contact';
+import Header from './components/header/header';
 
 import './App.scss';
 
@@ -10,9 +12,11 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <Header />
         <Switch>
-          <Route exact path='/' component={HomePage} />
+        <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/contact' component={ContactPage} />
         </Switch>
       </div>
     );
