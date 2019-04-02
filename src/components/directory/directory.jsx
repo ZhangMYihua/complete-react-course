@@ -13,7 +13,7 @@ class Directory extends Component {
         {
           title: 'hats',
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-          linkTo: '/hats',
+          linkTo: '/shop',
           size: 'small'
         },
         {
@@ -30,13 +30,13 @@ class Directory extends Component {
         },
         {
           title: 'womens',
-          imageUrl: 'https://i.ibb.co/qFbNWNV/women.png',
+          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
           linkTo: '',
           size: 'big'
         },
         {
           title: 'mens',
-          imageUrl: 'https://i.ibb.co/6rLfSr3/men.png',
+          imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
           linkTo: '',
           size: 'big'
         }
