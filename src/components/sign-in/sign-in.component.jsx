@@ -3,6 +3,8 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import FormButton from '../form-button/form-button.component';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
@@ -51,7 +53,15 @@ class SignIn extends React.Component {
             label='Password'
             required
           />
-          <FormButton type='submit'>Sign In</FormButton>
+          <div className='buttons-bar'>
+            <FormButton type='submit'>Sign In</FormButton>
+            <FormButton
+              onClick={signInWithGoogle}
+              style={{ backgroundColor: '#4285F4' }}
+            >
+              Sign In With Google
+            </FormButton>
+          </div>
         </form>
       </div>
     );
