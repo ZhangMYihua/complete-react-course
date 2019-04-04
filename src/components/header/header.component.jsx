@@ -7,17 +7,17 @@ import './header.styles.scss';
 
 const Header = () => (
   <div className='header'>
-    <Link className='logoContainer' to='/'>
+    <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
     <div className='options'>
-      <Link className='optionContainer' to='/shop'>
+      <Link className='option-container' to='/shop'>
         <span>SHOP</span>
       </Link>
-      <Link className='optionContainer' to='/contact'>
+      <Link className='option-container' to='/contact'>
         <span>CONTACT</span>
       </Link>
-      <Link className='optionContainer' to='/signIn'>
+      <Link className='option-container' to='/signIn'>
         <span>SIGN IN</span>
       </Link>
     </div>

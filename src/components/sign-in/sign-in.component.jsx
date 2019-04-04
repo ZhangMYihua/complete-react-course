@@ -1,5 +1,8 @@
 import React from 'react';
 
+import FormInput from '../form-input/form-input.component';
+import FormButton from '../form-button/form-button.component';
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
@@ -18,37 +21,37 @@ class SignIn extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit() {}
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.setState({ email: '', password: '' });
+  };
 
   render() {
     const { email, password } = this.state;
 
     return (
-      <div className='signInContainer'>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password.</span>
-        <form className='signInForm' onSubmit={this.handleSubmit}>
-          <div className='group'>
-            <input
-              type='email'
-              name='email'
-              value={email}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Email</label>
-          </div>
-          <div className='group'>
-            <input
-              type='password'
-              name='password'
-              value={password}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Password</label>
-          </div>
-          <input type='submit' value='Sign In' />
+      <div className='sign-in-container'>
+        <h2 className='title'>I already have an account</h2>
+        <span className='subtext'>Sign in with your email and password.</span>
+        <form className='sign-in-form' onSubmit={this.handleSubmit}>
+          <FormInput
+            type='email'
+            name='email'
+            value={email}
+            onChange={this.handleChange}
+            label='Email'
+            required
+          />
+          <FormInput
+            type='password'
+            name='password'
+            value={password}
+            onChange={this.handleChange}
+            label='Password'
+            required
+          />
+          <FormButton type='submit'>Sign In</FormButton>
         </form>
       </div>
     );
