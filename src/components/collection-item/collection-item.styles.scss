@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
+  cursor: pointer;
 
   .image {
     width: 100%;
@@ -21,12 +22,13 @@
     font-size: 18px;
 
     .name {
-      width: 90%;
+      width: 75%;
       margin-bottom: 15px;
     }
 
     .price {
-      width: 10%;
+      width: 20%;
+      text-align: right;
     }
   }
 }
