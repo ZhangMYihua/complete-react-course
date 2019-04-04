@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from './pages/homepage/homepage';
-import HatsPage from './pages/hats/hats';
+import HomePage from './pages/homepage/homepage.component';
+import HatsPage from './pages/hats/hats.component';
 
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className='App'>
