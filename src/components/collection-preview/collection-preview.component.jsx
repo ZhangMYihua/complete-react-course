@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CollectionItem from '../collection-item/collection-item';
+import CollectionItem from '../collection-item/collection-item.component';
 
-import './collection-preview.scss';
+import './collection-preview.styles.scss';
 
 const CollectionPreview = ({ title, items }) => (
-  <div className='collectionPreview'>
+  <div className='collection-preview'>
     <div className='title'>{title}</div>
     <div className='preview'>
       {items.map((item, i) => (
