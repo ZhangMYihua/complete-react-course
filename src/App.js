@@ -3,9 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
-
-import ContactPage from './pages/contact/contact';
-import Header from './components/header/header';
+import ContactPage from './pages/contact/contact.component';
+import Header from './components/header/header.component';
 
 import './App.scss';
 
