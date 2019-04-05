@@ -3,11 +3,7 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import FormButton from '../form-button/form-button.component';
 
-import {
-  auth,
-  signInWithGoogle,
-  createUserProfileDocument
-} from '../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss';
 

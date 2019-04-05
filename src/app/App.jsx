@@ -1,38 +1,37 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import Header from './components/header/header.component';
+import Header from '../components/header/header.component';
 
-import HomePage from './pages/homepage/homepage.component';
-import ShopPage from './pages/shop/shop.component';
-import ContactPage from './pages/contact/contact.component';
-import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import HomePage from '../pages/homepage/homepage.component';
+import ShopPage from '../pages/shop/shop.component';
+import ContactPage from '../pages/contact/contact.component';
+import SignInAndSignUp from '../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { setCurrentUser } from '../redux/user/user.actions';
+
+import { auth, createUserProfileDocument } from '../firebase/firebase.utils';
 
 import './App.scss';
 
 class App extends React.Component {
-  state = {
-    currentUser: null
-  };
-
   unsubscribeFromAuth = null;
 
   componentDidMount = () => {
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       // userAuth returns null when auth.signOut() is called
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: { id: snapShot.id, ...snapShot.data() }
-          });
+          setCurrentUser({ id: snapShot.id, ...snapShot.data() });
         });
       }
 
-      this.setState({ currentUser: userAuth });
+      setCurrentUser(userAuth);
     });
   };
 
@@ -41,7 +40,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser } = this.props;
     return (
       <div className='App'>
         <Header currentUser={currentUser} />
@@ -56,4 +55,15 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+const mapStateToProps = ({ currentUser }) => ({ ...currentUser });
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);
