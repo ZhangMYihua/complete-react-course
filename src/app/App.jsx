@@ -40,10 +40,9 @@ class App extends React.Component {
   };
 
   render() {
-    const { currentUser } = this.props;
     return (
       <div className='App'>
-        <Header currentUser={currentUser} />
+        <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
@@ -55,7 +54,7 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({ ...currentUser });
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
