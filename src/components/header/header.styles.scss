@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  position: relative;
 
   .logo-container {
     height: 100%;
@@ -12,31 +13,19 @@
   }
 
   .options {
-    width: 50%;
+    min-width: 50%;
     height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 
+    & > :last-child {
+      margin-left: 15px;
+    }
+
     .option-container {
       padding: 10px 15px;
       margin: 0 10px;
-    }
-
-    .signout-button {
-      min-width: 165px;
-      margin: 0 10px;
-      width: auto;
-      height: 40px;
-      letter-spacing: 0.5px;
-      font-size: 15px;
-      background-color: white;
-      color: black;
-      text-transform: uppercase;
-      font-weight: bolder;
-      cursor: pointer;
-      border: 1px solid grey;
-      border-radius: 5px;
     }
   }
 }

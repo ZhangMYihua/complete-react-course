@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import FormButton from '../form-button/form-button.component';
+import CustomButton from '../custom-button/custom-button.component';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
             label='Confirm Password'
             required
           />
-          <FormButton type='submit'>Sign Up</FormButton>
+          <CustomButton type='submit'>Sign Up</CustomButton>
         </form>
       </div>
     );
