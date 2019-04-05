@@ -6,7 +6,7 @@ import './cart.styles.scss';
 
 const Cart = ({ ...props }) => (
   <div className='cart-dropdown' {...props}>
-    <CustomButton inverted={true}>CHECKOUT</CustomButton>
+    <CustomButton inverted={true}>GO TO CHECKOUT</CustomButton>
   </div>
 );
 
