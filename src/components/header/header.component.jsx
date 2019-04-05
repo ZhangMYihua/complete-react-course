@@ -11,7 +11,7 @@ import { auth } from '../../firebase/firebase.utils';
 
 import './header.styles.scss';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
   <div className='header'>
     <Link className='logo-container' to='/'>
       <Logo className='logo' />
@@ -34,19 +34,22 @@ const Header = ({ currentUser }) => (
       )}
       <CartIcon />
     </div>
-    <Cart
-      style={{
-        position: 'absolute',
-        top: '80px',
-        right: '0',
-        zIndex: 5
-      }}
-    />
+    {hidden ? null : (
+      <Cart
+        style={{
+          position: 'absolute',
+          top: '80px',
+          right: '0',
+          zIndex: 5
+        }}
+      />
+    )}
   </div>
 );
 
-const mapStateToProps = ({ user: { currentUser } }) => ({
-  currentUser
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden
 });
 
 export default connect(

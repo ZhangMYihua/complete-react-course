@@ -5,7 +5,6 @@ export const addItemToCart = item => ({
   payload: item
 });
 
-export const setCartHidden = boolean => ({
-  type: CartActionTypes.SET_CART_HIDDEN,
-  payload: boolean
+export const toggleCartHidden = () => ({
+  type: CartActionTypes.TOGGLE_CART_HIDDEN
 });
