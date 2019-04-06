@@ -9,7 +9,7 @@ const CollectionPreview = ({ title, items }) => (
     <div className='title'>{title}</div>
     <div className='preview'>
       {items.map((item, i) => (
-        <CollectionItem key={i} {...item} />
+        <CollectionItem key={i} item={item} />
       ))}
     </div>
   </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import CustomButton from '../custom-button/custom-button.component';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/cart-icon.component';
 import Cart from '../cart/cart.component';
@@ -24,9 +23,9 @@ const Header = ({ currentUser, hidden }) => (
         <span>CONTACT</span>
       </Link>
       {currentUser ? (
-        <CustomButton onClick={() => auth.signOut()} inverted={true}>
-          Sign Out of {currentUser.displayName}
-        </CustomButton>
+        <div className='option-container' onClick={() => auth.signOut()}>
+          SIGN OUT
+        </div>
       ) : (
         <Link className='option-container' to='/signIn'>
           <span>SIGN IN</span>

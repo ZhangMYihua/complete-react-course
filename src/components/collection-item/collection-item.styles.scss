@@ -4,7 +4,39 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
-  cursor: pointer;
+  position: relative;
+
+  .add-button {
+    position: absolute;
+    height: 50px;
+    width: 80%;
+    padding: 25px;
+    opacity: 0.7;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    display: none;
+    top: 255px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.8;
+    }
+
+    .add-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: black;
+        color: white;
+        opacity: 0.85;
+      }
+    }
+  }
 
   .image {
     width: 100%;
