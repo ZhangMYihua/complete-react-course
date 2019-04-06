@@ -33,16 +33,7 @@ const Header = ({ currentUser, hidden }) => (
       )}
       <CartIcon />
     </div>
-    {hidden ? null : (
-      <Cart
-        style={{
-          position: 'absolute',
-          top: '80px',
-          right: '0',
-          zIndex: 5
-        }}
-      />
-    )}
+    {hidden ? null : <Cart />}
   </div>
 );
 
