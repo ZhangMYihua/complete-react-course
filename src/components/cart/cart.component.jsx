@@ -12,7 +12,6 @@ import './cart.styles.scss';
 const Cart = ({ cartItems, closeCart, history }) => (
   <div className='cart-dropdown'>
     <div className='cart-items'>
-      {console.log(cartItems)}
       {cartItems.length ? (
         cartItems.map((cartItem, idx) => (
           <CartItem key={idx} cartItem={cartItem} />
