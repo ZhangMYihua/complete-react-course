@@ -5,6 +5,7 @@ export const addItemToCart = item => ({
   payload: item
 });
 
-export const toggleCartHidden = () => ({
-  type: CartActionTypes.TOGGLE_CART_HIDDEN
+export const toggleCartHidden = (bool = null) => ({
+  type: CartActionTypes.TOGGLE_CART_HIDDEN,
+  payload: bool
 });
