@@ -27,4 +27,4 @@ const CollectionItem = ({ item, dispatch }) => {
   );
 };
 
-export default connect(() => ({}))(CollectionItem);
+export default connect()(CollectionItem);
