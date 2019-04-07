@@ -14,3 +14,8 @@ export const getCombinedCartPrices = createSelector(
   getCartItems,
   items => items.reduce((total, item) => total + item.price, 0)
 );
+
+export const getCombinedCartPrices = createSelector(
+  getCartItems,
+  items => items.reduce((total, item) => total + item.price, 0)
+);
