@@ -4,17 +4,18 @@ import { withRouter } from 'react-router-dom';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
-import { getCombinedCartItems } from '../../redux/cart/cart.selectors';
+import { getCartItems } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 import './cart.styles.scss';
 
-const Cart = ({ combinedItems, closeCart, history }) => (
+const Cart = ({ cartItems, closeCart, history }) => (
   <div className='cart-dropdown'>
     <div className='cart-items'>
-      {combinedItems.length ? (
-        combinedItems.map((combinedItem, idx) => (
-          <CartItem key={idx} combinedItem={combinedItem} />
+      {console.log(cartItems)}
+      {cartItems.length ? (
+        cartItems.map((cartItem, idx) => (
+          <CartItem key={idx} cartItem={cartItem} />
         ))
       ) : (
         <span className='empty-message'>Your cart is empty</span>
@@ -33,7 +34,7 @@ const Cart = ({ combinedItems, closeCart, history }) => (
 );
 
 const mapStateToProps = state => ({
-  combinedItems: getCombinedCartItems(state)
+  cartItems: getCartItems(state)
 });
 
 const mapDispatchToProps = dispatch => ({

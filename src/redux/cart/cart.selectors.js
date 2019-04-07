@@ -4,20 +4,13 @@ export const getCartItems = state => state.cart.items;
 
 export const getCartHidden = state => state.cart.hidden;
 
-export const getCombinedCartItems = createSelector(
-  getCartItems,
-  items =>
-    items.reduce((combinedItems, item) => {
-      const combinedItem = combinedItems.find(({ id }) => id === item.id);
-      if (combinedItem) {
-        combinedItem.quantity++;
-        return combinedItems;
-      }
-      return [...combinedItems, { ...item, quantity: 1 }];
-    }, [])
-);
-
 export const getCombinedCartPrices = createSelector(
   getCartItems,
-  items => items.reduce((total, item) => total + item.price, 0)
+  items => items.reduce((total, item) => total + item.price * item.quantity, 0)
+);
+
+export const getCartItemsCount = createSelector(
+  getCartItems,
+  cartItems =>
+    cartItems.reduce((count, cartItem) => cartItem.quantity + count, 0)
 );

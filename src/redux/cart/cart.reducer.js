@@ -5,12 +5,21 @@ const INITIAL_STATE = {
   items: []
 };
 
+const addItem = (items, itemToAdd) => {
+  const existingItem = items.find(item => item.id === itemToAdd.id);
+  if (existingItem) {
+    existingItem.quantity++;
+    return [...items];
+  }
+  return [...items, { ...itemToAdd, quantity: 1 }];
+};
+
 export const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CartActionTypes.ADD_ITEM:
       return {
         ...state,
-        items: [...state.items, action.payload]
+        items: addItem(state.items, action.payload)
       };
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {

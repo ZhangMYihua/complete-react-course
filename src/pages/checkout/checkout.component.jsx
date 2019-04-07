@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-  getCombinedCartItems,
+  getCartItems,
   getCombinedCartPrices
 } from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({ combinedItems, total }) => (
+const CheckoutPage = ({ cartItems, total }) => (
   <div className='checkout-page'>
     <div className='checkout-header'>
       <div className='header-block'>
@@ -28,8 +28,8 @@ const CheckoutPage = ({ combinedItems, total }) => (
         <span>Remove</span>
       </div>
     </div>
-    {combinedItems.map((combinedItem, idx) => (
-      <CheckoutItem key={idx} combinedItem={combinedItem} />
+    {cartItems.map((cartItem, idx) => (
+      <CheckoutItem key={idx} cartItem={cartItem} />
     ))}
     <div className='total'>
       <span>TOTAL: ${total}</span>
@@ -38,7 +38,7 @@ const CheckoutPage = ({ combinedItems, total }) => (
 );
 
 const mapStateToProps = state => ({
-  combinedItems: getCombinedCartItems(state),
+  cartItems: getCartItems(state),
   total: getCombinedCartPrices(state)
 });
 
