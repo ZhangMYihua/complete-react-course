@@ -44,7 +44,4 @@ const mapStateToProps = state => ({
   hidden: getCartHidden(state)
 });
 
-export default connect(
-  mapStateToProps,
-  {}
-)(Header);
+export default connect(mapStateToProps)(Header);
