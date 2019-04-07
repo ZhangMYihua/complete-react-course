@@ -1,15 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import {
   getCartItems,
   getCombinedCartPrices
 } from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CustomButton from '../../components/custom-button/custom-button.component';
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({ cartItems, total }) => (
+const CheckoutPage = ({ cartItems, total, history }) => (
   <div className='checkout-page'>
     <div className='checkout-header'>
       <div className='header-block'>
@@ -34,6 +36,10 @@ const CheckoutPage = ({ cartItems, total }) => (
     <div className='total'>
       <span>TOTAL: ${total}</span>
     </div>
+
+    <CustomButton onClick={() => history.push('/payment')} inverted={true}>
+      Pay
+    </CustomButton>
   </div>
 );
 
@@ -42,4 +48,4 @@ const mapStateToProps = state => ({
   total: getCombinedCartPrices(state)
 });
 
-export default connect(mapStateToProps)(CheckoutPage);
+export default withRouter(connect(mapStateToProps)(CheckoutPage));
