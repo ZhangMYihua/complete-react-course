@@ -11,5 +11,3 @@ const middlewares = [logger, thunk];
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
-
-export default { store, persistor };

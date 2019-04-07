@@ -10,8 +10,6 @@ import App from './app/App';
 
 import './index.css';
 
-console.log(store);
-
 render(
   <Router>
     <Provider store={store}>

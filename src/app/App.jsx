@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from '../components/header/header.component';
@@ -7,7 +7,8 @@ import Header from '../components/header/header.component';
 import HomePage from '../pages/homepage/homepage.component';
 import ShopPage from '../pages/shop/shop.component';
 import ContactPage from '../pages/contact/contact.component';
-import SignInAndSignUp from '../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import SigninAndSignupPage from '../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import CheckoutPage from '../pages/checkout/checkout.component';
 
 import { setCurrentUser } from '../redux/user/user.actions';
 
@@ -47,7 +48,8 @@ class App extends React.Component {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
           <Route exact path='/contact' component={ContactPage} />
-          <Route exact path='/signIn' component={SignInAndSignUp} />
+          <Route exact path='/signIn' component={SigninAndSignupPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>
       </div>
     );
@@ -60,9 +62,7 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
