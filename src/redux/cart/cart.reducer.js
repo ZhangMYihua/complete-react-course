@@ -12,12 +12,12 @@ export const cartReducer = (state = INITIAL_STATE, action) => {
     case CartActionTypes.ADD_ITEM:
       return {
         ...state,
-        cartItems: [...addItem(state.cartItems, action.payload)]
+        cartItems: addItem(state.cartItems, action.payload)
       };
     case CartActionTypes.REMOVE_ITEM:
       return {
         ...state,
-        cartItems: [...removeItem(state.cartItems, action.payload)]
+        cartItems: removeItem(state.cartItems, action.payload)
       };
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
@@ -28,9 +28,7 @@ export const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: [
-          ...state.cartItems.filter(
-            cartItem => cartItem.id !== action.payload.id
-          )
+          ...state.cartItems.filter(cartItem => cartItem.id !== action.payload)
         ]
       };
     default:
