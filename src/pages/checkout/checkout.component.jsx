@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { push } from 'connected-react-router';
 
 import {
   getCartItems,
@@ -11,7 +11,7 @@ import CustomButton from '../../components/custom-button/custom-button.component
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({ cartItems, total, history }) => (
+const CheckoutPage = ({ cartItems, total, push }) => (
   <div className='checkout-page'>
     <div className='checkout-header'>
       <div className='header-block'>
@@ -37,7 +37,7 @@ const CheckoutPage = ({ cartItems, total, history }) => (
       <span>TOTAL: ${total}</span>
     </div>
 
-    <CustomButton onClick={() => history.push('/payment')} inverted={true}>
+    <CustomButton onClick={() => push('/payment')} inverted={true}>
       Pay
     </CustomButton>
   </div>
@@ -48,4 +48,11 @@ const mapStateToProps = state => ({
   total: getCombinedCartPrices(state)
 });
 
-export default withRouter(connect(mapStateToProps)(CheckoutPage));
+const mapDispatchToProps = dispatch => ({
+  push: route => dispatch(push(route))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CheckoutPage);
