@@ -1,10 +1,11 @@
+import { push } from 'connected-react-router';
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './menu-item.styles.scss';
 
-const MenuItem = ({ title, imageUrl, size, linkTo, history }) => (
-  <div className={`${size} menu-item`} onClick={() => history.push(linkTo)}>
+const MenuItem = ({ title, imageUrl, size, linkTo, push }) => (
+  <div className={`${size} menu-item`} onClick={() => push(linkTo)}>
     <div
       className='background-container'
       style={{
@@ -18,4 +19,11 @@ const MenuItem = ({ title, imageUrl, size, linkTo, history }) => (
   </div>
 );
 
-export default withRouter(MenuItem);
+const mapDispatchToProps = dispatch => ({
+  push: route => dispatch(push(route))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(MenuItem);
