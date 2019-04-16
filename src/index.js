@@ -14,7 +14,7 @@ import './index.css';
 render(
   <Router>
     <Provider store={store}>
-      <StripeProvider apiKey='pk_test_TYooMQauvdEDq54NiTphI7jx'>
+      <StripeProvider apiKey='pk_test_KzWXSJxJu3foClpqvGjmUlnp00c4Xcfgbb'>
         <PersistGate persistor={persistor}>
           <App />
         </PersistGate>
