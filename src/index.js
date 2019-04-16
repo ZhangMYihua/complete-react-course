@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { StripeProvider } from 'react-stripe-elements';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -14,11 +13,9 @@ import './index.css';
 render(
   <Router>
     <Provider store={store}>
-      <StripeProvider apiKey='pk_test_KzWXSJxJu3foClpqvGjmUlnp00c4Xcfgbb'>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </StripeProvider>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </Router>,
   document.getElementById('root')

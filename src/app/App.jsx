@@ -9,7 +9,6 @@ import ShopPage from '../pages/shop/shop.component';
 import ContactPage from '../pages/contact/contact.component';
 import SigninAndSignupPage from '../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from '../pages/checkout/checkout.component';
-import PaymentPage from '../pages/payment/payment.component';
 
 import { setCurrentUser } from '../redux/user/user.actions';
 import { getCurrentUser } from '../redux/user/user.selectors';
@@ -62,7 +61,6 @@ class App extends React.Component {
             }
           />
           <Route exact path='/checkout' component={CheckoutPage} />
-          <Route exact path='/payment' component={PaymentPage} />
         </Switch>
       </div>
     );
