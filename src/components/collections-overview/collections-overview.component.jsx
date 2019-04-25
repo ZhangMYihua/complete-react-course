@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 import CollectionPreview from '../collection-preview/collection-preview.component';
 import { getPreviewCollections } from '../../redux/shop/shop.selectors';
 
-import './collections-overview.styles.scss';
+import { CollectionsOverviewContainer } from './collections-overview.styles';
 
 const CollectionsOverview = ({ previewCollections, match }) => (
-  <div className='collections-overview'>
+  <CollectionsOverviewContainer className='collections-overview'>
     <h1>Collections</h1>
     {previewCollections.map((collection, idx) => (
       <CollectionPreview {...collection} key={idx} />
     ))}
-  </div>
+  </CollectionsOverviewContainer>
 );
 
 const mapStateToProps = state => ({

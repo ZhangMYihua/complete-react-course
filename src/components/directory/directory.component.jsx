@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import { getSections } from '../../redux/directory/directory.selector.js';
 import MenuItem from '../menu-item/menu-item.component';
 
-import './directory.styles.scss';
+import { DirectoryMenuContainer } from './directory.styles';
 
 const Directory = ({ sections }) => (
-  <div className='directory-menu'>
+  <DirectoryMenuContainer>
     {sections.map((section, i) => (
       <MenuItem key={i} {...section} />
     ))}
-  </div>
+  </DirectoryMenuContainer>
 );
 
 const mapStateToProps = state => ({

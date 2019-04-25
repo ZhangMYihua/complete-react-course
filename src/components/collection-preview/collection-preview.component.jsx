@@ -6,19 +6,23 @@ import CollectionItem from '../collection-item/collection-item.component';
 
 import { getLocationPathname } from '../../redux/router/router.selectors';
 
-import './collection-preview.styles.scss';
+import {
+  CollectionPreviewContainer,
+  TitleContainer,
+  PreviewContainer
+} from './collection-preview.styles';
 
 const CollectionPreview = ({ title, items, routeName, push, pathname }) => (
-  <div className='collectionPreview'>
-    <div className='title' onClick={() => push(`${pathname}/${routeName}`)}>
+  <CollectionPreviewContainer>
+    <TitleContainer onClick={() => push(`${pathname}/${routeName}`)}>
       {title}
-    </div>
-    <div className='preview'>
+    </TitleContainer>
+    <PreviewContainer>
       {items.map((item, i) => (
         <CollectionItem key={i} item={item} />
       ))}
-    </div>
-  </div>
+    </PreviewContainer>
+  </CollectionPreviewContainer>
 );
 
 const mapStateToProps = state => ({
