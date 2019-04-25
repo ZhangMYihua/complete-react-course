@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
@@ -11,8 +10,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLink,
-  OptionDiv
+  OptionLink
 } from './header.styles';
 
 import { auth } from '../../firebase/firebase.utils';
@@ -30,7 +28,9 @@ const Header = ({ currentUser, hidden }) => (
         <span>CONTACT</span>
       </OptionLink>
       {currentUser ? (
-        <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+        <OptionLink as='div' onClick={() => auth.signOut()}>
+          SIGN OUT
+        </OptionLink>
       ) : (
         <OptionLink to='/signIn'>
           <span>SIGN IN</span>
