@@ -4,21 +4,22 @@
   "private": true,
   "dependencies": {
     "axios": "0.18.0",
-    "connected-react-router": "6.3.2",
+    "connected-react-router": "6.4.0",
     "firebase": "5.9.2",
     "history": "4.9.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "6.0.1",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "5.0.0",
     "react-scripts": "2.1.8",
     "react-stripe-checkout": "2.6.3",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",
     "redux-persist": "5.10.0",
     "redux-thunk": "2.3.0",
-    "reselect": "4.0.0"
+    "reselect": "4.0.0",
+    "styled-components": "4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
