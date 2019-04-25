@@ -7,19 +7,25 @@ import CartItem from '../cart-item/cart-item.component';
 import { getCartItems } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
-import './cart.styles.scss';
+import {
+  CartDropdownContainer,
+  EmptyMessageContainer,
+  CartItemsContainer
+} from './cart.styles';
 
 const Cart = ({ cartItems, closeCart, push }) => (
-  <div className='cart-dropdown'>
-    <div className='cart-items'>
+  <CartDropdownContainer>
+    <CartItemsContainer>
       {cartItems.length ? (
         cartItems.map((cartItem, idx) => (
           <CartItem key={idx} cartItem={cartItem} />
         ))
       ) : (
-        <span className='empty-message'>Your cart is empty</span>
+        <EmptyMessageContainer className='empty-message'>
+          Your cart is empty
+        </EmptyMessageContainer>
       )}
-    </div>
+    </CartItemsContainer>
     <CustomButton
       inverted={true}
       onClick={() => {
@@ -29,7 +35,7 @@ const Cart = ({ cartItems, closeCart, push }) => (
     >
       GO TO CHECKOUT
     </CustomButton>
-  </div>
+  </CartDropdownContainer>
 );
 
 const mapStateToProps = state => ({
