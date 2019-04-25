@@ -4,9 +4,9 @@ import { CartItemContainer, ItemDetailsContainer } from './cart-item.styles';
 
 const CartItem = ({ cartItem: { imageUrl, price, name, quantity } }) => {
   return (
-    <CartItemContainer className='cart-item'>
+    <CartItemContainer>
       <img src={imageUrl} alt='item' />
-      <ItemDetailsContainer className='item-details'>
+      <ItemDetailsContainer>
         <span>{name}</span>
         <span>{`${quantity} x $${price}`}</span>
       </ItemDetailsContainer>

@@ -4,19 +4,23 @@ import { connect } from 'react-redux';
 import { getCategory } from '../../redux/shop/shop.selectors.js';
 import CollectionItem from '../collection-item/collection-item.component';
 
-import './collection.styles.scss';
+import {
+  CollectionContainer,
+  CollectionTitle,
+  CollectionItemsContainer
+} from './collection.styles';
 
 const Collection = ({ category }) => {
   const { title, items } = category;
   return (
-    <div className='collection'>
-      <h2 className='title'>{title}</h2>
-      <div className='items'>
+    <CollectionContainer>
+      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionItemsContainer>
         {items.map((item, idx) => (
           <CollectionItem item={item} key={idx} />
         ))}
-      </div>
-    </div>
+      </CollectionItemsContainer>
+    </CollectionContainer>
   );
 };
 

@@ -21,9 +21,7 @@ const Cart = ({ cartItems, closeCart, push }) => (
           <CartItem key={idx} cartItem={cartItem} />
         ))
       ) : (
-        <EmptyMessageContainer className='empty-message'>
-          Your cart is empty
-        </EmptyMessageContainer>
+        <EmptyMessageContainer>Your cart is empty</EmptyMessageContainer>
       )}
     </CartItemsContainer>
     <CustomButton
