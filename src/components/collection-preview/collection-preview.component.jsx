@@ -21,7 +21,7 @@ const CollectionPreview = ({ title, items, routeName, push, pathname }) => (
   </div>
 );
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = state => ({
   pathname: getLocationPathname(state)
 });
 
