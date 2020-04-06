@@ -9,7 +9,7 @@ export const MenuItemContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	height: ${({ small }) => (small ? '240px' : '380px')}
+	height: ${({ small }) => (small ? '240px' : '380px')};
 
 	&:hover {
 		cursor: pointer;
